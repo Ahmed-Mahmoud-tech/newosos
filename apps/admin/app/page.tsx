@@ -1,12 +1,12 @@
 import Image, { type ImageProps } from "next/image";
 import { Button } from "@repo/ui/button";
 import styles from "./page.module.css";
-
+import { formatDate, capitalize } from "@repo/common";
+import "@repo/common/src/styles/index.css";
 type Props = Omit<ImageProps, "src"> & {
   srcLight: string;
   srcDark: string;
 };
-
 const ThemeImage = (props: Props) => {
   const { srcLight, srcDark, ...rest } = props;
 
@@ -21,6 +21,7 @@ const ThemeImage = (props: Props) => {
 export default function Home() {
   return (
     <div className={styles.page}>
+      
       <main className={styles.main}>
         <ThemeImage
           className={styles.logo}
@@ -33,9 +34,10 @@ export default function Home() {
         />
         <ol>
           <li>
-            Get started by editing <code>apps/docs/app/page.tsx</code>
+            Get started by editing <code>apps/web/app/page.tsx</code>
           </li>
-          <li>Save and see your changes instantly.0000000000</li>
+        
+          <li className="bg-red-700 border">{capitalize("admin")}</li>
         </ol>
 
         <div className={styles.ctas}>
@@ -63,7 +65,7 @@ export default function Home() {
             Read our docs
           </a>
         </div>
-        <Button appName="docs" className={styles.secondary}>
+        <Button appName="web" className={styles.secondary}>
           Open alert
         </Button>
       </main>
@@ -100,3 +102,4 @@ export default function Home() {
     </div>
   );
 }
+

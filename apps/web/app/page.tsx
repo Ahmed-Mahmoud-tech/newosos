@@ -1,7 +1,8 @@
 import Image, { type ImageProps } from "next/image";
 import { Button } from "@repo/ui/button";
 import styles from "./page.module.css";
-
+import { formatDate, capitalize } from "@repo/common";
+import "@repo/common/src/styles/index.css";
 type Props = Omit<ImageProps, "src"> & {
   srcLight: string;
   srcDark: string;
@@ -21,6 +22,7 @@ const ThemeImage = (props: Props) => {
 export default function Home() {
   return (
     <div className={styles.page}>
+      
       <main className={styles.main}>
         <ThemeImage
           className={styles.logo}
@@ -35,7 +37,7 @@ export default function Home() {
           <li>
             Get started by editing <code>apps/web/app/page.tsx</code>
           </li>
-          <li>Save and see your changes instantly.</li>
+          <li>{capitalize("ddddgdssddddddddd")}</li>
         </ol>
 
         <div className={styles.ctas}>
