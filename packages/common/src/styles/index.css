@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 /* Variables */
 :root {
   --primary-color: #0070f3;
@@ -16,8 +15,8 @@
   display: flex;
 }
 
-body{
-    background:green
+body {
+  background: green;
 }
 
 .flex-col {
@@ -54,4 +53,4 @@ body{
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1rem;
-} 
+}
