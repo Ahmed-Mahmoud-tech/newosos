@@ -26,7 +26,6 @@ coverage
 out/
 build
 dist
-notes.txt
 
 
 # Debug
@@ -37,3 +36,6 @@ yarn-error.log*
 # Misc
 .DS_Store
 *.pem
+
+
+notes.txt
