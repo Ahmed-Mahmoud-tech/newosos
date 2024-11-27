@@ -14,8 +14,9 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  console.log('222');
   const locale = await getLocale();
-  const x: number = 5;
+  const x: any = 5;
   return (
     <html lang={locale}>
       <AppClientWrapper>
