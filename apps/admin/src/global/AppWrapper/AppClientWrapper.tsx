@@ -4,6 +4,8 @@ import { store } from '../../store/store';
 import { Provider } from 'react-redux';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import Cookies from 'js-cookie';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function AppWrapper({
   children,
@@ -13,7 +15,8 @@ function AppWrapper({
   const queryClient = new QueryClient({
     defaultOptions: {
       queries: {
-        refetchOnWindowFocus: false,
+        refetchOnWindowFocus: true,
+        retry: 0,
       },
     },
   });
@@ -22,7 +25,10 @@ function AppWrapper({
   return (
     <QueryClientProvider client={queryClient}>
       <Provider store={store}>
-        <body className={darkMode ? 'dark' : 'light'}>{children}</body>
+        <body className={darkMode ? 'dark' : 'light'}>
+          {children}
+          <ToastContainer />
+        </body>
       </Provider>
     </QueryClientProvider>
   );
